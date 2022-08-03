@@ -6,15 +6,43 @@
       <div class="article-metadata">
         <a class="mr-2" href="#">{{ object.author }}</a>
         <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-        {% if object.author == user %}
-          <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
-            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
-          </div>
-        {% endif %}
       </div>
-      <h2 class="article-title">{{ object.title }}</h2>
-      <p class="article-content">{{ object.content }}</p>
+      <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>Username</td>
+                <td>{{ object.title }}</td>
+            </tr>
+            <tr>
+                <td>Mail</td>
+                <td>{{ object.email }}</td>
+            </tr>
+            <tr>
+                <td>Sex</td>
+                <td>{{ object.gender }}</td>
+            </tr>
+            <tr>
+                <td>Born</td>
+                <td>{{ object.birth_date }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ object.location }}</td>
+            </tr>
+            <tr>
+                <td>class</td>
+                <td>{{ object.category }}</td>
+            </tr>
+        </tbody>
+    </table>
+      {% if object.author == user %}
+      <div>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+      </div>
+    {% endif %}
     </div>
   </article>
 {% endblock content %}
+
+

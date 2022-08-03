@@ -3,6 +3,16 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
+from django.shortcuts import render, redirect
+# from django.urls import reverse_lazy
+# from django.views.generic import CreateView
+
+
+# class SignUpView(CreateView):
+#     form_class = UserRegisterForm
+#     success_url = reverse_lazy('blog-home')
+#     template_name = 'users/register.html'
+
 
 def register(request):
     if request.method == 'POST':
