@@ -3,16 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
-from django.shortcuts import render, redirect
-# from django.urls import reverse_lazy
-# from django.views.generic import CreateView
-
-
-# class SignUpView(CreateView):
-#     form_class = UserRegisterForm
-#     success_url = reverse_lazy('blog-home')
-#     template_name = 'users/register.html'
-
 
 def register(request):
     if request.method == 'POST':
@@ -32,8 +22,8 @@ def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.profile)
+                                    request.FILES,
+                                    instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()

@@ -34,7 +34,7 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'post-create' %}">Add Student</a>
+                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
@@ -70,7 +70,7 @@
               </div>
           </div>
 
-          <div class="card my-4">
+          <!-- <div class="card my-4">
             <h5 class="card-header">Categories</h5>
             <div class="card-body">
                 <div class="row">
@@ -78,7 +78,7 @@
                   <a href="{% url 'category' categories %}" style="text-decoration:none; color:black"><li class="list-group-item">{{categories}} <span class="badge bg-dark">{{categories.category_set.count}}</span></li></a>
                   {% endfor %}
                 </div>
-            </div>
+            </div> -->
         </div>
       </div>
       </div>
